@@ -64,15 +64,36 @@ public class NameRepository {
     }
 
     public static boolean remove(final String fullname) {
+        if (find(fullname) == fullname) {
+
         String[] newArr = new String[names.length -1];
         for (int i = 0; i < names.length; i++) {
-            if (names[i].equalsIgnoreCase(fullname))
+            if (!names[i].equalsIgnoreCase(fullname))
+                continue;
+            newArr[i] = names[i];
+        }
+        names = newArr;
+        
+            return false;
+    }
+
+
+        // public static boolean remove(final
+
+    public static boolean remove2(final String fullname) {
+        if (find(fullname) == null) return false;
+
+        String[] newArr = new String[names.length -1];
+        for (int i = 0; i < names.length; i++) {
+            if (!names[i].equalsIgnoreCase(fullname))
                 continue;
             newArr[i] = names[i];
         }
         names = newArr;
         return true;
     }
+
+
 
 
     /**

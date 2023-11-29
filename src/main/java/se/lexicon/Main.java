@@ -12,7 +12,10 @@ public class Main {
         String addingName2 = "Goran M";
         NameRepository.add(addingName2);
         NameRepository.add(addingName);
+
+
         String[] names = NameRepository.findAll();
+        NameRepository.remove("John Smith");
         System.out.println(Arrays.toString(names));
 
         //System.out.println(NameRepository.getSize());
