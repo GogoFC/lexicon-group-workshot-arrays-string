@@ -1,11 +1,23 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
-        String[] names = NameRepository.getNames();
+        String[] initialNames = {"Jackie M", "Goran M", "Manprit Kumar", "Attila B" };
+        NameRepository.setNames(initialNames);
 
-        System.out.println();
+        String addingName = "John Smith";
+        String addingName2 = "Goran M";
+        NameRepository.add(addingName2);
+        NameRepository.add(addingName);
+        String[] names = NameRepository.findAll();
+        System.out.println(Arrays.toString(names));
+
+        //System.out.println(NameRepository.getSize());
+        //System.out.println(Arrays.toString(NameRepository.findByFirstName("Goran")));
+
 
     }
 }
