@@ -1,6 +1,7 @@
 package se.lexicon;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class NameRepository {
     private static String[] names = new String[0];
@@ -64,35 +65,69 @@ public class NameRepository {
     }
 
     public static boolean remove(final String fullname) {
-        if (find(fullname) == fullname) {
+        String[] newArr = new String[names.length - 1];
 
-        String[] newArr = new String[names.length -1];
-        for (int i = 0; i < names.length; i++) {
-            if (!names[i].equalsIgnoreCase(fullname))
-                continue;
-            newArr[i] = names[i];
+        int l = names.length;
+        int i = 0;
+        int j = 0;
+
+        while (l > 0) {
+            if (!names[i].equalsIgnoreCase(fullname)){
+                newArr[j] = names[i];
+                i++; j++;
+            } else {
+                i++;
+            }
+            l--;
         }
         names = newArr;
-        
-            return false;
-    }
 
 
-        // public static boolean remove(final
-
-    public static boolean remove2(final String fullname) {
-        if (find(fullname) == null) return false;
-
-        String[] newArr = new String[names.length -1];
-        for (int i = 0; i < names.length; i++) {
-            if (!names[i].equalsIgnoreCase(fullname))
-                continue;
-            newArr[i] = names[i];
-        }
-        names = newArr;
         return true;
     }
 
+    /*
+    public static boolean remove(final String fullname) {
+        if (find(fullname) == null) return true;
+
+        String[] newArr = new String[names.length -1];
+        for (int i = 0; i < names.length; i++) {
+            if (!names[i].equalsIgnoreCase(fullname))
+                continue;
+            newArr[i] = names[i];
+        }
+        names = newArr;
+
+            return false;
+    }
+*/
+
+        // public static boolean remove(final String fullName) {
+        // for(int i = 0 ; i < names.length;i++){
+        // if (names[i].equals(fullName)){
+        // system.arraycopy(names,i+1,names,i,name.length -i -1);
+        // names= Arrays.copy(names,names.length -1);
+        // }
+        // }
+
+        //return false;
+
+        // }
+
+    /*
+    public static boolean remove2(final String fullname) {
+        if (Objects.equals(find(fullname), fullname)) return true;
+
+        String[] newArr = new String[names.length -1];
+        for (int i = 0; i < names.length; i++) {
+            if (!names[i].equalsIgnoreCase(fullname))
+                continue;
+            newArr[i] = names[i];
+        }
+        names = newArr;
+        return false;
+    }
+*/
 
 
 

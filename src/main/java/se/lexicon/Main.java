@@ -13,9 +13,9 @@ public class Main {
         NameRepository.add(addingName2);
         NameRepository.add(addingName);
 
-
+        NameRepository.remove("Goran M");
         String[] names = NameRepository.findAll();
-        NameRepository.remove("John Smith");
+
         System.out.println(Arrays.toString(names));
 
         //System.out.println(NameRepository.getSize());
