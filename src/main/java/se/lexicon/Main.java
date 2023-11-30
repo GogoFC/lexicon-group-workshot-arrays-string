@@ -16,7 +16,9 @@ public class Main {
         NameRepository.remove("Goran M");
         String[] names = NameRepository.findAll();
 
-        System.out.println(Arrays.toString(names));
+        //System.out.println(Arrays.toString(names));
+        NameRepository.clear();
+        System.out.println(Arrays.toString(names) + "cleared");
 
         //System.out.println(NameRepository.getSize());
         //System.out.println(Arrays.toString(NameRepository.findByFirstName("Goran")));

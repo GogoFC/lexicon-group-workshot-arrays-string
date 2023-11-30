@@ -15,8 +15,9 @@ public class NameRepository {
     }
 
     public static void clear() {
-        String[] temp = new String[0];
-        names = temp;
+        //String[] temp = new String[0];
+        //names = temp;
+        names = new String[0];
     }
 
     public static String[] findAll() {
