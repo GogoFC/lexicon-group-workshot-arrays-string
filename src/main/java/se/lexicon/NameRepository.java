@@ -72,6 +72,8 @@ public class NameRepository {
         int i = 0;
         int j = 0;
 
+        if (find(fullname) == null) return false;
+
         while (l > 0) {
             if (!names[i].equalsIgnoreCase(fullname)){
                 newArr[j] = names[i];
