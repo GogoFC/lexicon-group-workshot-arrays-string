@@ -9,16 +9,16 @@ public class Main {
         NameRepository.setNames(initialNames);
 
         String addingName = "John Smith";
-        String addingName2 = "Goran M";
-        NameRepository.add(addingName2);
+        //String addingName2 = "Goran M";
+        //NameRepository.add(addingName2);
         NameRepository.add(addingName);
 
-        NameRepository.remove("Goran M");
+        NameRepository.remove("John Smith");
         String[] names = NameRepository.findAll();
 
-        //System.out.println(Arrays.toString(names));
-        NameRepository.clear();
-        System.out.println(Arrays.toString(names) + "cleared");
+        System.out.println(Arrays.toString(names));
+        //NameRepository.clear();
+        //System.out.println(Arrays.toString(names) + "cleared");
 
         //System.out.println(NameRepository.getSize());
         //System.out.println(Arrays.toString(NameRepository.findByFirstName("Goran")));
